@@ -132,6 +132,10 @@ GEM
     rails-assets-jquery (3.2.1)
     rails-assets-ng-file-upload (12.2.13)
       rails-assets-angular (> 1.2.0)
+    rails-controller-testing (1.0.1)
+      actionpack (~> 5.x)
+      actionview (~> 5.x)
+      activesupport (~> 5.x)
     rails-dom-testing (2.0.2)
       activesupport (>= 4.2.0, < 6.0)
       nokogiri (~> 1.6)
@@ -225,6 +229,7 @@ DEPENDENCIES
   rails-assets-angular-resource!
   rails-assets-jquery!
   rails-assets-ng-file-upload!
+  rails-controller-testing
   rspec-rails
   sass-rails (~> 5.0)
   shoulda-matchers
