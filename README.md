@@ -1,24 +1,37 @@
-# README
+# TODO-LIST - Rails Application with RSpec
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project have by objective, study the gem RSpec and methodology SCRUM.
 
-Things you may want to cover:
+To follow project development:
+[Trello Project](https://trello.com/b/WeyQjdyW/todo-listhttps://trello.com/b/WeyQjdyW/todo-list)
 
-* Ruby version
 
-* System dependencies
+In this project have:
 
-* Configuration
+* Ruby version 2.4
 
-* Database creation
+* Rails 5
 
-* Database initialization
+* Rails API
 
-* How to run the test suite
+* AngularJS (1)
 
-* Services (job queues, cache servers, search engines, etc.)
+* RSpec
 
-* Deployment instructions
+* Simple_form
 
-* ...
+* Bootstrap (as CDN)
+
+# TO RUN ON YOUR MACHINE
+
+Clone this respository and run the commands in project folder:
+```
+bundle install
+rake db:reset
+rails server
+```
+
+To see the tests run:
+```
+rspec spec
+```
