@@ -6,4 +6,21 @@ class ListsController < ApplicationController
   def new
     @list = List.new
   end
+
+  def create
+    @list = List.new(list_params)
+
+    if @list.save
+      flash[:notice] = 'Lista criada com sucesso!'
+      redirect_to list_path(@list.id)
+    else
+      flash[:error] = 'Verifique se preencheu os campos corretamente.'
+      render :new
+    end
+  end
+
+  private
+  def list_params
+    params.require(:list).permit(:title, :desription)
+  end
 end
