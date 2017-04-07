@@ -1,1 +1,10 @@
 <h1>Index Lists</h1>
+
+<% @lists.each do |list| %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h1><%= list.title %></h1>
+      <p><%= list.description %></p>
+    </div>
+  </div>
+<% end %>
