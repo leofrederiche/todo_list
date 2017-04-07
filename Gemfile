@@ -22,6 +22,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
   gem 'rails-controller-testing'
+  gem 'simple_form'
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
