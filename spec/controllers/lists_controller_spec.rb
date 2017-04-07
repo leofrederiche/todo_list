@@ -20,6 +20,14 @@ describe ListsController do
           }.to change(List, :count).by(1)
         end
 
+        it 'Verify authenticity' do
+          my_lead = FactoryGirl.build(:list)
+          post :create, list: FactoryGirl.attributes_for(:list)
+
+          expect(List.last.title).to eq(my_lead.title)
+          expect(List.last.description).to eq(my_lead.description)
+        end
+
         it 'Redirect to show_list' do
           post :create, list: FactoryGirl.attributes_for(:list)
           should redirect_to List.last
@@ -38,7 +46,7 @@ describe ListsController do
           }.to_not change(List, :count)
         end
 
-        it 'Redirect to show_list' do
+        it 'Render :new' do
           post :create, list: FactoryGirl.attributes_for(:invalid_list)
           should render_template :new
         end
