@@ -3,7 +3,7 @@
 <% @lists.each do |list| %>
   <div class="panel panel-default">
     <div class="panel-body">
-      <h1><%= list.title %></h1>
+      <h1><%= link_to list.title, list_path(list.id) %></h1>
       <p><%= list.description %></p>
     </div>
   </div>
