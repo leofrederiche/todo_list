@@ -1,21 +1,31 @@
-<h1>Index Lists</h1>
-
-<% @lists.each do |list| %>
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <h1><%= link_to list.title, list_path(list.id) %></h1>
-      <p><%= list.description %></p>
-    </div>
-  </div>
-<% end %>
-
-<h1>Lista via JSON (ANGULAR)</h1>
-
 <div ng-controller="ListIndex as vm" ng-init="vm.load()">
+  <h1>Index Lists</h1>
+
+  <button class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#newListModal">Adicionar lista</button>
+
   <div class="panel panel-default" ng-repeat="list in vm.lists">
     <div class="panel-body">
       <h1><a href="/lists/{{ list.id }}"> {{ list.title }} </a></h1>
       <p>{{ list.description }}</p>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="newListModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Nova Lista</h4>
+        </div>
+        <div class="modal-body">
+          <%= render "form" %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" ng-disabled="FormNewList.$invalid" ng-click="vm.create(list)">Adicionar</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
