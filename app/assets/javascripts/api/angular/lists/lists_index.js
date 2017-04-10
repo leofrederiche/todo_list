@@ -16,7 +16,6 @@
     function load(){
       listAPI.index(function(data) {
         vm.lists = data;
-        console.log('data', data);
       }, function (errors) {
         console.log('errors', errors);
       });

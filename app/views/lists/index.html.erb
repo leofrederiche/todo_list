@@ -14,7 +14,7 @@
 <div ng-controller="ListIndex as vm" ng-init="vm.load()">
   <div class="panel panel-default" ng-repeat="list in vm.lists">
     <div class="panel-body">
-      <h1><a href="/list/{{ list.id }}"> {{ list.title }} </a></h1>
+      <h1><a href="/lists/{{ list.id }}"> {{ list.title }} </a></h1>
       <p>{{ list.description }}</p>
     </div>
   </div>

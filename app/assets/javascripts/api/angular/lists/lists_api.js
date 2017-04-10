@@ -9,7 +9,7 @@
 
   function listAPI($resource){
     return $resource('', {id: '@id'}, {
-      index: {url: '/api/lists', method: 'GET', isArray: true}
+      index: {url: '/api/v1/lists', method: 'GET', isArray: true},
       // new: {url: '/api/users/new', method: 'GET'},
       // create: {url: '/api/users', method: 'POST'},
       // edit: {url: '/api/users/:id/edit', method: 'GET'},
