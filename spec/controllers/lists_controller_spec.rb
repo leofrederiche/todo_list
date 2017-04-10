@@ -57,4 +57,17 @@ describe ListsController do
         end
       end
     end
+
+    describe '#SHOW' do
+      it 'request <contact>' do
+        list = FactoryGirl.create(:list)
+        get :show, id: list
+        expect(assigns(:list)).to eq(list)
+      end
+
+      it 'render view' do
+        get :show, id: FactoryGirl.create(:list)
+        should render_template :show
+      end
+    end
 end
