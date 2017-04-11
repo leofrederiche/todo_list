@@ -3,6 +3,9 @@
 
   <button class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#newListModal" ng-click="list = null;">Adicionar lista</button>
 
+  <div class="loading">
+  </div>
+
   <div class="panel panel-default" ng-repeat="list in vm.lists">
     <div class="panel-body">
       <!-- <h1><a href="/lists/{{ list.id }}" ng-click="vm.show(list.id)"> {{ list.title }} </a></h1> -->

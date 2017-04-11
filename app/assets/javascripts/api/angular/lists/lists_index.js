@@ -16,8 +16,10 @@
     vm.show = show;
 
     function load(){
+      $('.loading').css('display', 'block');
       listAPI.index(function(data) {
         vm.lists = data;
+        $('.loading').css('display', 'none');
       }, function (errors) {
         console.log('Error on Load ->', errors);
       });
