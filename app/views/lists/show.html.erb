@@ -1,1 +1,4 @@
-<h1><%= @list.title %></h1>
+<div ng-controller="ListIndex as vm" ng-init="vm.show(<%= @list.id %>)">
+  <h1>{{ list.title }}</h1>
+  <p>{{ list.description }}</p>
+</div>

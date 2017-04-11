@@ -13,12 +13,13 @@
     // Methods for view
     vm.load = load;
     vm.create = create;
+    vm.show = show;
 
     function load(){
       listAPI.index(function(data) {
         vm.lists = data;
       }, function (errors) {
-        console.log('errors', errors);
+        console.log('Error on Load ->', errors);
       });
     }
 
@@ -28,7 +29,16 @@
         $('#newListModal').modal('hide');
         $scope.list = null;
       }, function(errors) {
-          console.log('errors', errors);
+          console.log('Error on Create ->', errors);
+      });
+    }
+
+    function show(response){
+      var params = {id: response};
+      listAPI.show(params, function(data){
+        $scope.list = data;
+      }, function(errors) {
+        console.log('Error on Query ->', errors);
       });
     }
 

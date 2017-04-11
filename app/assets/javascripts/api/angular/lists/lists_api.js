@@ -14,7 +14,8 @@
       create: {url: '/api/v1/lists', method: 'POST'},
       // edit: {url: '/api/users/:id/edit', method: 'GET'},
       // update: {url: '/api/users/:id', method: 'PATCH'},
-      // destroy: {url: '/api/users/:id', method: 'DELETE'}
+      // destroy: {url: '/api/users/:id', method: 'DELETE'},
+      show: {url: '/api/v1/lists/:id', method: 'GET'},
     });
   }
 })();

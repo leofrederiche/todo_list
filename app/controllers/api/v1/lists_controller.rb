@@ -1,12 +1,7 @@
 class Api::V1::ListsController < ApplicationController
   def index
-    @lists = List.all
-    render json: @lists
-  end
-
-  def show
-    @list = List.find params[:id]
-    render json: @list
+      @lists = List.all
+      render json: @lists
   end
 
   def create
@@ -23,6 +18,11 @@ class Api::V1::ListsController < ApplicationController
     @list = List.find params[:id]
     @list.destroy
     render json: {notice: 'Lista deletada com sucesso!'}
+  end
+
+  def show
+    @list = List.find params[:id]
+    render json: @list
   end
 
   private
