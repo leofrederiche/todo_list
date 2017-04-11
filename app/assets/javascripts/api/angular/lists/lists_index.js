@@ -27,7 +27,6 @@
       listAPI.create({list: response},function(data){
         load();
         $('#newListModal').modal('hide');
-        $scope.list = null;
       }, function(errors) {
           console.log('Error on Create ->', errors);
       });

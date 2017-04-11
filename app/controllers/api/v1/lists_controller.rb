@@ -1,6 +1,6 @@
 class Api::V1::ListsController < ApplicationController
   def index
-      @lists = List.all
+      @lists = List.all.reverse
       render json: @lists
   end
 
